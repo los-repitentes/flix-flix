@@ -1,11 +1,33 @@
 .main-header {
+    align-items: center;
     overflow: hidden;
+    padding: .4rem 2rem;
     display: flex;
     height: $header-height;
     width: 100%;
     background-color: var(--bg-color);
     justify-content: space-between;
-    box-shadow: -5px -5px .7em var(--button-color);
+    box-shadow: -5px -5px .7em var(--primary);
     z-index: 10;
     position: fixed;
+}
+
+.search-container {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    & img {
+        width: 1.5rem;
+        color: var(--primary);
+    }
+}
+
+.search-input {
+    width: 100%;
+    padding: .5rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--primary);
+    color: var(--primary);
 }

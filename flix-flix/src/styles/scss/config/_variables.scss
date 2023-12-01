@@ -19,6 +19,7 @@ $breakpoints: (
     --bg-color:#FFFF;
     --bg-color2: #F6F9FC;
     --rounded-element: #F3F5F9;
+    color: var(--letter-color);
     background-color: var(--bg-color);
     // Z-index - Variables de apilamientos
     --z-back: -10;
