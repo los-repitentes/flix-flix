@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Menu from './menu';
 import LogoBusqueda from '../assets/busqueda.svg';
+import Logo from '../assets/logo.svg';
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -13,8 +14,7 @@ const Header = () => {
         <header className="main-header">
           <div className="main-logo">
             <a href="/">
-              {/* <img src="" alt="Logo de Idiomas en Señas" /> */}
-              <h2 className='loguito'>Flix flix</h2>
+              <img src={Logo} alt="Logo de Idiomas en Señas" style={{width: '8rem'}} />
             </a>
           </div>
   
