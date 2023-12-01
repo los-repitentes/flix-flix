@@ -17,7 +17,7 @@ const Login = () => {
       };
 
       return (
-        <div className="relative h-full w-full fondo bg-no-repeat bg-center bg-fixed bg-cover">
+        <div className="relative h-full w-full fondo">
           <div className="bg-black w-full h-full lg:bg-opacity-50">
             <nav className='px-12 py-5'>
               <img src="/images/logo.png" alt="logo" className='h-12'/>
