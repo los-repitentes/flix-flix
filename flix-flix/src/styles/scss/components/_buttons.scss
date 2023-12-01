@@ -1,0 +1,32 @@
+.btn {
+    text-align: center;
+    align-items: center;
+    padding: .7em 2em;
+    margin: .5em; 
+    border-radius: .3em;
+    border: none;
+    background-color: var(--primary);
+    // color: var(--button-color);
+    color: #FFFF;
+    will-change: filter background-color;
+    transition: filter .3s, background-color .3s;
+    font-family: 'Nunito', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    &:hover{
+        background-color: var(--bg-color);
+        filter: drop-shadow(0 0 .2em $border-color);
+        outline: .1em solid var(--button-color);
+        cursor: pointer;
+    }
+}
+
+.secundary {
+    background-color: var(--bg-color);
+    outline: .1em solid var(--button-color);
+    &:hover {
+        color: var(--bg-color);
+        background-color: var(--button-color);
+        cursor: pointer;
+    }
+}
