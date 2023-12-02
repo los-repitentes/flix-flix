@@ -82,9 +82,9 @@ const Login = () => {
             <nav className='px-12 py-5'>
               <img src={Logo} alt="logo" className='h-12'/>
             </nav>
-            <form onSubmit={env}>
+            <form onSubmit={env} className="flex justify-center w-full">
             <div className="flex justify-center">
-              <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
+              <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:max-w-md rounded-md w-full">
                 <h2 className='text-white text-4xl mb-8 font-semibold'>
                   {variant == 'login' ? 'Inicia sesión' : 'Crea una cuenta'}
                 </h2>
