@@ -1,6 +1,7 @@
 const SearchResultList = ({ results }) => {
 
   return (
+    results? (
       <ul className="search-result z-10">
       <li key={results.Title} className="search-result-item">
         <img src={results.Poster} className="result-thumbnail" alt="Imagen o Cover de la pelicula" />
@@ -11,6 +12,9 @@ const SearchResultList = ({ results }) => {
         </div>
       </li>
   </ul>
+  )
+  :
+  (<p>No se encontraron resultados</p>)
   )
 }
 
