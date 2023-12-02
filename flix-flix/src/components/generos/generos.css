@@ -1,24 +1,43 @@
 /* src/styles/css/generos.css */
 
-.genero {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff; /* Fondo blanco para el cuerpo */
+  }
+  
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .side-space {
+    flex: 1;
+    background-color: #fff; /* Color blanco para el espacio a los lados */
+  }
+  
+  .genero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alinea los elementos al centro horizontalmente */
-    justify-content: center; /* Alinea los elementos al centro verticalmente */
-    gap: 10px;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 60%; /* Porcentaje del ancho total */
+    height: 80vh; /* Ajuste la altura según sus necesidades */
+    margin: auto; /* Centra horizontalmente */
   }
   
   h1,
   h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: white;
   }
   
   form {
@@ -26,13 +45,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     width: 100%;
-    align-items: center; /* Alinea los elementos al centro horizontalmente en el formulario */
+    align-items: center;
   }
   
   label {
     flex: 0 1 auto;
     margin-bottom: 10px;
-    text-align: center; /* Centra el texto dentro de cada etiqueta */
+    text-align: center;
   }
   
   input[type="checkbox"] {
@@ -54,7 +73,6 @@
   
   li {
     margin-bottom: 5px;
-    color: white;
-    text-align: center; /* Centra el texto dentro de cada elemento de la lista */
+    text-align: center;
   }
   

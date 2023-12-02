@@ -133,7 +133,7 @@ const Login = () => {
                   </span>
                 </p>
                 <p className='text-neutral-500 mt-2 text-sm'>
-                  Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.
+                  Disclaimer: imagenes utilizadas son propiedad de star+
                   <span className='text-blue-600 hover:cursor-pointer hover:underline ms-1'>
                     Más info.
                   </span>
