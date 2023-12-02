@@ -46,7 +46,6 @@ const Login = () => {
           const info = {
             email: data.email,
             id: data.id,
-          
             nombre: data.nombre,
             apellido: data.apellido,
            
@@ -55,7 +54,25 @@ const Login = () => {
           localStorage.setItem("User", JSON.stringify(info));
           history("/generos");
           }else{
-            alert("malo")
+            const res = await fetch(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/registro.php`, {
+              method: "POST",
+              body: JSON.stringify(datos),
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+            });
+            const data2 = await res.json();
+            if (data.id) {
+              const info = {
+                email: data.email,
+                id: data.id,
+                nombre: data.nombre,
+                apellido: data.apellido,
+               
+              }
+              localStorage.setItem("User", JSON.stringify(info));
+          history("/generos");
 
           }
         // log.innerText = "Re intentar";
@@ -106,7 +123,7 @@ const Login = () => {
                   {variant == 'login' ? 'Inicia sesión' : 'Crea una cuenta'}
                 </h2>
                 <div className="flex flex-col gap-4">
-                  {variant == 'registro' && (
+                  {variant == 'registro' && (<>
                     <Input 
                       label='Username'
                       onChange={cambio}
@@ -115,9 +132,30 @@ const Login = () => {
                       name='usr'
                       // value={name}
                     />
+                    <Input 
+                      label='Nombre'
+                      onChange={cambio}
+                      id='nombre'
+                      type='text'
+                      name='nombre'
+                      // value={name}
+                    />
+                    <Input 
+                      label='Apellido'
+                      onChange={cambio}
+                      id='apellido'
+                      type='text'
+                      name='apellido'
+                      // value={name}
+                    />
+                   
+                  </>
+                    
                   )}
+                  
+                
                   <Input 
-                    label='Email '
+                    label='Email'
                     onChange={cambio}
                     id='email'
                     name ='email'
