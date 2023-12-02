@@ -93,7 +93,7 @@ const Modal = (
         </div>
         <div className="modal-body">
           <YouTube videoId={trailerUrl} opts={opts} />
-          <img src={imagen} alt={titulo} className="modal-image" />
+          {/* <img src={imagen} alt={titulo} className="modal-image" /> */}
           <div className="movie-details">
             <p>
               <strong>Año:</strong> {año}
