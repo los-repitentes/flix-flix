@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Video from "../../assets/nowuseeme.mp4"
 const Modal = (
     {
         titulo,
@@ -16,8 +16,6 @@ const Modal = (
         onClose
       }
 ) => {
-
-    const trailerUrl = "https://www.youtube.com/watch?v=d-ByOsX4Jis&ab_channel=NanoManiac";
 
     const opts = {
         height: "390",
@@ -82,7 +80,7 @@ const Modal = (
       </div>
     </div> */}
 
-<div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2>{titulo}</h2>
@@ -91,9 +89,9 @@ const Modal = (
           </button>
         </div>
         <div className="modal-body">
-        <video src="../../assets/nowuseeme.mp4" autoPlay poster={imagen}
-        className='h-[22vw] w-full object-cover'></video>
-          <div className="movie-details">
+        <video src={Video} poster={imagen}
+        className="w-full sm:h-[20vw] object-cover brightness-[60%] transition duration-500" autoPlay muted loop></video>
+          <div className="movie-detail">
             <p>
               <strong>Año:</strong> {año}
             </p>
