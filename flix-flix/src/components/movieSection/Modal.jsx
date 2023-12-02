@@ -90,7 +90,7 @@ const Modal = (
         </div>
         <div className="modal-body">
         <video src={Video} poster={imagen}
-        className="w-full sm:h-[20vw] object-cover brightness-[60%] transition duration-500" autoPlay muted loop></video>
+        className="w-full sm:h-[20vw] object-cover brightness-[60%] transition duration-500" autoPlay muted loop controls></video>
           <div className="movie-detail">
             <p>
               <strong>Año:</strong> {año}
