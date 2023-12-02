@@ -1,7 +1,7 @@
 const SearchResultList = ({ results }) => {
 
   return (
-    results && results.length ? (
+    results? (
       <ul className="search-result z-10">
       <li key={results.Title} className="search-result-item">
         <img src={results.Poster} className="result-thumbnail" alt="Imagen o Cover de la pelicula" />
