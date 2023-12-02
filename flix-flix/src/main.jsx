@@ -4,7 +4,7 @@ import App from './pages/App'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './styles/css/styles.css'
 import Home from './pages/Home'
-import Genero from './components/generos/Genero';
+import Genero from './components/generos/Generos';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <Home/>,
   },
   {
-    path: "/generos",
+    path: "/Generos",
     element: <Genero />,
   },
 ]) 
