@@ -3,20 +3,20 @@ import './generos.css';
 import { useNavigate } from 'react-router-dom';
 
 const generosPrincipales = [
-  "Acción",
-  "Aventura",
-  "Animación",
-  "Comedia",
-  "Crimen",
+  "Action",
+  "Adventure",
+  "Animation",
+  "Comedy",
+  "Crime",
   "Drama",
-  "Fantasía",
+  "Fancy",
   "Terror",
-  "Ciencia ficción",
+  "Science fiction",
   "Romance",
-  "Misterio",
+  "Mystery",
   "Suspense",
-  "Documental",
-  "Familia",
+  "Documentary film",
+  "Family",
   // ... (otros géneros)
 ];
 
