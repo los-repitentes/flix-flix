@@ -1,5 +1,5 @@
 :root {
-  --primary: #003787;
+  --primary: #da0e0e;
   --button-color: #FF7300;
   --letter-color: #000000f5;
   --bg-color:#FFFF;
@@ -220,6 +220,42 @@ h3 {
   .main-menu-toggle {
     display: none;
   }
+}
+
+footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 1;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-item {
+  margin: 0 0.5rem;
+}
+
+.additional {
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
