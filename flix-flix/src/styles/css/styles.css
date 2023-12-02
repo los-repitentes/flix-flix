@@ -395,6 +395,7 @@ footer {
   display: flex;
   align-items: center;
   padding: 1rem;
+  color: var(--letter-color);
 }
 
 .result-thumbnail {
@@ -415,7 +416,6 @@ footer {
 
 .result-description {
   margin: 0;
-  color: #555;
 }
 
 /*# sourceMappingURL=styles.css.map */

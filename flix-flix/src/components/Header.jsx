@@ -48,7 +48,6 @@ const Header = () => {
           </div>
   
           <div className="search-container">
-        <form>
         <input
           className='search-input'
           type="search"
@@ -56,7 +55,6 @@ const Header = () => {
           value={searchTerm}
           onChange={handleSearchChange}
         />
-      </form>
         <img src={LogoBusqueda} alt="Logo de busqueda de peliculas" />
           </div>
           {/* Menu Hamburguesa */}
@@ -68,7 +66,6 @@ const Header = () => {
           <Menu isMenuOpen={isMenuOpen} />
         </header>
         { searchTerm.length>=3 && <SearchResultList results={searchResults} />}
-          {/* <SearchResultList results={searchResults} /> */}
       </>
   )
 }
