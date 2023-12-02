@@ -11,15 +11,16 @@ const Card = ({
   generos,
   lanzamiento,
   idioma,
+  results
 }) => {
   return (
     <>
       <div className="card-item">
-        <img src={imagen} alt="Imagen o Cover de la pelicula" />
+        <img src={results.Poster} alt="Imagen o Cover de la pelicula" />
         <div className="card-body">
-          <h4>{titulo}</h4>
-          <p>{descripcion}</p>
-          <span>Año: {año}</span>
+          <h4>{results.Title}</h4>
+          <p>Generos{results.Genre}</p>
+          <span>Año: {results.Year}</span>
          <div className="btn-organization">
          <div className="button-container">
             <button className="button">

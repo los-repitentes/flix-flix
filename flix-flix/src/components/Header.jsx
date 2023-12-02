@@ -7,6 +7,18 @@ const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    
+    const handleScroll = () => {
+        setScrollPosition(window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+        }, []);
   
     const handleSearchChange = (event) => {
       setSearchTerm(event.target.value);
@@ -40,7 +52,7 @@ const Header = () => {
   
     return (
       <>
-        <header className="main-header">
+        <header className={`main-header ${scrollPosition > 0 ? 'backgroud-change' : ''}`}>
           <div className="main-logo">
             <a href="/">
               <img src={Logo} alt="Logo de Idiomas en Señas" style={{width: '8rem'}} />
