@@ -1,6 +1,8 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Menu = ({ isMenuOpen }) => {
+  const navigate = useNavigate();
     const scrollToSection = (event,sectionId) => {
         event.preventDefault();
         const section = document.getElementById(sectionId);
@@ -8,6 +10,14 @@ const Menu = ({ isMenuOpen }) => {
           section.scrollIntoView({ behavior: "smooth" });
         }
       };
+      const user = JSON.parse(localStorage.getItem("User"));
+      useEffect(() =>{
+
+        if (!localStorage.getItem("User")){
+          navigate('/');
+        }
+
+      },[]);
 
     return (
     <>
@@ -19,7 +29,7 @@ const Menu = ({ isMenuOpen }) => {
               href="#ini"
               onClick={(event) => scrollToSection(event, "ini")}
             >
-              Inicio
+            {user?.nombre}
             </a>
           </li>
         </ul>

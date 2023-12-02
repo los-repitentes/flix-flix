@@ -26,6 +26,11 @@ function Generos() {
 
   // Cargar datos desde localStorage al montar el componente
   useEffect(() => {
+      if(localStorage.getItem("selectedGenres")){
+        navigate('/Home');
+      }
+
+
     const storedGenres = JSON.parse(localStorage.getItem("selectedGenres")) || [];
     setSelectedGenres(storedGenres);
   }, []);

@@ -1,7 +1,7 @@
 const SearchResultList = ({ results }) => {
 
   return (
-    results? (
+    results && results.length ? (
       <ul className="search-result z-10">
       <li key={results.Title} className="search-result-item">
         <img src={results.Poster} className="result-thumbnail" alt="Imagen o Cover de la pelicula" />
@@ -14,7 +14,13 @@ const SearchResultList = ({ results }) => {
   </ul>
   )
   :
-  (<p>No se encontraron resultados</p>)
+  (
+    <ul className="search-result z-10">
+      <li key={results.Title} className="search-result-item">
+        <p>No hay resultados</p>
+      </li>
+  </ul>  
+  )
   )
 }
 
