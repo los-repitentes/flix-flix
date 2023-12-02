@@ -3,7 +3,7 @@ import Menu from './menu';
 import LogoBusqueda from '../assets/busqueda.svg';
 import Logo from '../assets/logo.svg';
 import SearchResultList from './search/SearchResultList'
-import Modal from './movieSection/Modal';
+import Modal from './search/ModalSearch';
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
@@ -13,6 +13,7 @@ const Header = () => {
 
     const openModal = () => {
       setIsModalOpen(true);
+      console.log("se cliqueo el modal")
     };
   
     const closeModal = () => {
@@ -86,9 +87,8 @@ const Header = () => {
           {/* Componente del menu */}
           <Menu isMenuOpen={isMenuOpen} />
         </header>
-        { searchTerm.length>=3 && <SearchResultList 
-        results={searchResults} 
-        onClick={openModal} />}
+        { searchTerm.length>=3 && <SearchResultList onClick={openModal}
+        results={searchResults} />}
         {isModalOpen && (
         <Modal
           results={searchResults}

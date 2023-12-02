@@ -439,6 +439,7 @@ footer {
 
 /* Estilos para el overlay del modal */
 .modal-overlay {
+  z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
