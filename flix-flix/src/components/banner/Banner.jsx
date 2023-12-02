@@ -35,7 +35,7 @@ const Banner = () => {
                   transition
               "
               >
-                <PlayIcon className="w-4 md:w-7 text-black mr-1" />
+                <PlayIcon className="w-4 md:w-7 text-white mr-1" />
                   Reproducir
               </button>
               <button
