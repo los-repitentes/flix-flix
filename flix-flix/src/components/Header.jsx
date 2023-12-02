@@ -88,33 +88,13 @@ const Header = () => {
         </header>
         { searchTerm.length>=3 && <SearchResultList 
         results={searchResults} 
-        titulo={searchResults.Title} 
-        imagen={searchResults.Poster}
-              año={searchResults.Year} 
-              generos={searchResults.Genre}
-              descripcion = {searchResults.Plot}
-              director = {searchResults.Director}
-              reparto = {searchResults.Actors}
-              calificacion = {searchResults.imdbRating}
-              lanzamiento = {searchResults.Released}
-              idioma = {searchResults.Language}
         onClick={openModal} />}
-        {/* {isModalOpen && (
+        {isModalOpen && (
         <Modal
-          titulo={titulo}
-          imagen={imagen}
-          año={año}
-          descripcion={descripcion}
-          director={director}
-          reparto={reparto}
-          calificacion={calificacion}
-          generos={generos}
-          lanzamiento={lanzamiento}
-          idioma={idioma}
-          results={results}
+          results={searchResults}
           onClose={closeModal}
         />
-      )} */}
+      )}
       </>
   )
 }

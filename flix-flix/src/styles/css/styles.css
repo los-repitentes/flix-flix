@@ -452,7 +452,7 @@ footer {
 
 /* Estilos para el contenido del modal */
 .modal-content {
-  background: #fff;
+  background: var(--bg-color2);
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
@@ -464,7 +464,7 @@ footer {
 /* Estilos para el botón de cerrar */
 .modal-content button {
   background: #007bff;
-  color: #fff;
+  color: var(--letter-color);
   border: none;
   padding: 10px 20px;
   margin-top: 10px;
