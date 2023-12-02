@@ -125,6 +125,10 @@ h3 {
   position: fixed;
 }
 
+.backgroud-change {
+  opacity: 0.7;
+}
+
 .search-container {
   width: 40%;
   display: flex;
@@ -287,6 +291,7 @@ footer {
 
 /* SubMenu.css */
 .menu {
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -380,6 +385,7 @@ footer {
 
 /* SearchResultList.css */
 .search-result {
+  cursor: pointer;
   background-color: var(--bg-color);
   position: fixed;
   top: 50%;
