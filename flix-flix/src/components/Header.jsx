@@ -3,10 +3,32 @@ import Menu from './menu';
 import LogoBusqueda from '../assets/busqueda.svg';
 import Logo from '../assets/logo.svg';
 import SearchResultList from './search/SearchResultList'
+import Modal from './search/ModalSearch';
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+      setIsModalOpen(true);
+      console.log("se cliqueo el modal")
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+    const handleScroll = () => {
+        setScrollPosition(window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+        }, []);
   
     const handleSearchChange = (event) => {
       setSearchTerm(event.target.value);
@@ -40,7 +62,7 @@ const Header = () => {
   
     return (
       <>
-        <header className="main-header">
+        <header className={`main-header ${scrollPosition > 0 ? 'backgroud-change' : ''}`}>
           <div className="main-logo">
             <a href="/">
               <img src={Logo} alt="Logo de Idiomas en Señas" style={{width: '8rem'}} />
@@ -65,9 +87,16 @@ const Header = () => {
           {/* Componente del menu */}
           <Menu isMenuOpen={isMenuOpen} />
         </header>
-        { searchTerm.length>=3 && <SearchResultList results={searchResults} />}
+        { searchTerm.length>=3 && <SearchResultList onClick={openModal}
+        results={searchResults} />}
+        {isModalOpen && (
+        <Modal
+          results={searchResults}
+          onClose={closeModal}
+        />
+      )}
       </>
   )
 }
-
+ 
 export default Header

@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import Modal from "./Modal";
 
 const Card = ({
   titulo,
@@ -11,14 +12,26 @@ const Card = ({
   generos,
   lanzamiento,
   idioma,
+  results
 }) => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
-      <div className="card-item">
+      <div className="card-item" onClick={openModal}>
         <img src={imagen} alt="Imagen o Cover de la pelicula" />
         <div className="card-body">
           <h4>{titulo}</h4>
-          <p>{descripcion}</p>
+          <p>Generos{generos}</p>
           <span>Año: {año}</span>
          <div className="btn-organization">
          <div className="button-container">
@@ -39,6 +52,23 @@ const Card = ({
          </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <Modal
+          titulo={titulo}
+          imagen={imagen}
+          año={año}
+          descripcion={descripcion}
+          director={director}
+          reparto={reparto}
+          calificacion={calificacion}
+          generos={generos}
+          lanzamiento={lanzamiento}
+          idioma={idioma}
+          results={results}
+          onClose={closeModal}
+        />
+      )}
     </>
   );
 };
