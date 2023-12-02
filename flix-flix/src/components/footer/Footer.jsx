@@ -5,7 +5,7 @@ import './footer.css';
 const Footer = () => {
   return (
     <footer className="section footer-minimal context-dark">
-      <div className="container wow-outer">
+      <div >
         <div className="wow fadeIn">
           <div className="row row-50 row-lg-60">
 
