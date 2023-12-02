@@ -2,8 +2,10 @@ import Input from "../Input/Input"
 import { useState, useCallback, useEffect } from 'react'
 import Logo from "../../assets/logo.svg"
 import "./Login.css"
-const Login = () => {
+import { useNavigate } from "react-router-dom";
 
+const Login = () => {
+  let history = useNavigate();
     const [variant, setVariant] = useState('login');
     const toggleVariant = useCallback(() => {
         setVariant((currentVariant) => currentVariant == 'login' ? 'registro' : 'login');
@@ -39,8 +41,23 @@ const Login = () => {
           },
         });
         const data = await res.json();
-        console.log(data)
-  
+        
+        if (data.id) {
+          const info = {
+            email: data.email,
+            id: data.id,
+          
+            nombre: data.nombre,
+            apellido: data.apellido,
+           
+          }
+
+          localStorage.setItem("User", JSON.stringify(info));
+          history("/generos");
+          }else{
+            alert("malo")
+
+          }
         // log.innerText = "Re intentar";
   
         // if (data.codigo_usuario) {
