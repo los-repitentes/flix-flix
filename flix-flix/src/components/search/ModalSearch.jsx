@@ -18,7 +18,7 @@ const ModalSearch = ({results}) => {
 <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>{titulo}</h2>
+          <h2>{results.Title}</h2>
           <button className="close-button" onClick={onClose}>
             &times;
           </button>
