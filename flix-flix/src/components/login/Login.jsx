@@ -117,7 +117,7 @@ const Login = () => {
                   />
                 </div>
                 <button type="submit" className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition'>
-                  Crear cuenta
+                { variant == 'login' ? 'Iniciar sesion' : 'Crear una cuenta'}
                 </button>
                 <div className="text-neutral-500 text-sm mt-2 flex justify-between">
                   <div className="">
