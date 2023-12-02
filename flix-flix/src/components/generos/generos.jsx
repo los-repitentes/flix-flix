@@ -1,6 +1,23 @@
 import React, { useState } from "react";
 import './generos.css';
 
+const generosPrincipales = [
+  "Acción",
+  "Aventura",
+  "Animación",
+  "Comedia",
+  "Crimen",
+  "Drama",
+  "Fantasía",
+  "Terror",
+  "Ciencia ficción",
+  "Romance",
+  "Misterio",
+  "Suspense",
+  "Documental",
+  "Familia",
+];
+
 function Generos() {
   const [selectedGenres, setSelectedGenres] = useState([]);
 
@@ -17,37 +34,20 @@ function Generos() {
     <div className="genero">
       <h1>Selecciona tus géneros de películas favoritos</h1>
       <form>
-        <label>
-          <input
-            type="checkbox"
-            value="Accion"
-            checked={selectedGenres.includes('Accion')}
-            onChange={handleGenreChange}
-          />
-          Acción
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            value="Comedia"
-            checked={selectedGenres.includes('Comedia')}
-            onChange={handleGenreChange}
-          />
-          Comedia
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            value="Drama"
-            checked={selectedGenres.includes('Drama')}
-            onChange={handleGenreChange}
-          />
-          Drama
-        </label>
-        <br />
-        {}
+        {generosPrincipales.map((genre) => (
+          <div key={genre}>
+            <label>
+              <input
+                type="checkbox"
+                value={genre}
+                checked={selectedGenres.includes(genre)}
+                onChange={handleGenreChange}
+              />
+              {genre}
+            </label>
+            <br />
+          </div>
+        ))}
       </form>
       <h2>Géneros seleccionados:</h2>
       <ul>
@@ -60,3 +60,4 @@ function Generos() {
 }
 
 export default Generos;
+
