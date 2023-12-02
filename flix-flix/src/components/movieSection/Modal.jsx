@@ -1,5 +1,4 @@
 import React from 'react'
-import YouTube from "react-youtube";
 
 const Modal = (
     {
@@ -92,7 +91,8 @@ const Modal = (
           </button>
         </div>
         <div className="modal-body">
-          <YouTube videoId={trailerUrl} opts={opts} />
+          {/* AQUI VA EL VIDEO */}
+          {/* <YouTube videoId={trailerUrl} opts={opts} /> */}
           {/* <img src={imagen} alt={titulo} className="modal-image" /> */}
           <div className="movie-details">
             <p>
