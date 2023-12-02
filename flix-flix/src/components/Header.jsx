@@ -3,12 +3,21 @@ import Menu from './menu';
 import LogoBusqueda from '../assets/busqueda.svg';
 import Logo from '../assets/logo.svg';
 import SearchResultList from './search/SearchResultList'
+import Modal from './movieSection/Modal';
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [scrollPosition, setScrollPosition] = useState(0);
-    
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
     const handleScroll = () => {
         setScrollPosition(window.scrollY);
     };
@@ -77,7 +86,35 @@ const Header = () => {
           {/* Componente del menu */}
           <Menu isMenuOpen={isMenuOpen} />
         </header>
-        { searchTerm.length>=3 && <SearchResultList results={searchResults} />}
+        { searchTerm.length>=3 && <SearchResultList 
+        results={searchResults} 
+        titulo={searchResults.Title} 
+        imagen={searchResults.Poster}
+              año={searchResults.Year} 
+              generos={searchResults.Genre}
+              descripcion = {searchResults.Plot}
+              director = {searchResults.Director}
+              reparto = {searchResults.Actors}
+              calificacion = {searchResults.imdbRating}
+              lanzamiento = {searchResults.Released}
+              idioma = {searchResults.Language}
+        onClick={openModal} />}
+        {/* {isModalOpen && (
+        <Modal
+          titulo={titulo}
+          imagen={imagen}
+          año={año}
+          descripcion={descripcion}
+          director={director}
+          reparto={reparto}
+          calificacion={calificacion}
+          generos={generos}
+          lanzamiento={lanzamiento}
+          idioma={idioma}
+          results={results}
+          onClose={closeModal}
+        />
+      )} */}
       </>
   )
 }
