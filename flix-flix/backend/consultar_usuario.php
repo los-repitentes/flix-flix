@@ -5,7 +5,7 @@ try {
     $conexion = conectar();
 
     // Realiza una consulta en la base de datos
-    $query = "SELECT * FROM usuarios";
+    $query = "SELECT * FROM uflixflix";
     $statement = $conexion->query($query);
     $resultados = $statement->fetchAll(PDO::FETCH_ASSOC);
 
