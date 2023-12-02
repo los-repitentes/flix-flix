@@ -9,16 +9,23 @@ const Submenu = () => {
 
   return (
     <>
+    
     <div className="menu">
       <ul className="list">
         <li className="menu-item" onClick={() => handleItemClick('General')}>Todas las peliculas</li>
         <li className="menu-item" onClick={() => handleItemClick('ComponenteB')}>Componente B</li>
         <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Recomendadas</li>
+        <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Favoritos</li>
+        <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Estrenos</li>
+
       </ul>
 
       {selectedItem === 'General' && <Movies />}
       {selectedItem === 'ComponenteB' && <ComponenteB />}
       {selectedItem === 'ComponenteC' && <ComponenteC />}
+      {selectedItem === 'Favoritos' && <Favoritos />}
+      {selectedItem === 'Estrenos' && <Estrenos />}
+
     </div>
     </>
   )
