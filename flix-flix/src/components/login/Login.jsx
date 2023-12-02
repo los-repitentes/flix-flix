@@ -75,6 +75,7 @@ const Login = () => {
           history("/generos");
 
           }
+        }
         // log.innerText = "Re intentar";
   
         // if (data.codigo_usuario) {
