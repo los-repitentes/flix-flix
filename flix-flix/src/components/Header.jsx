@@ -77,7 +77,6 @@ const Header = () => {
           value={searchTerm}
           onChange={handleSearchChange}
         />
-        <img src={LogoBusqueda} alt="Logo de busqueda de peliculas" />
           </div>
           {/* Menu Hamburguesa */}
           <div
