@@ -17,7 +17,6 @@ const Submenu = () => {
         <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Recomendadas</li>
         <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Favoritos</li>
         <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Estrenos</li>
-
       </ul>
 
       {selectedItem === 'General' && <Movies />}

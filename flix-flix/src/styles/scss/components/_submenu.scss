@@ -33,4 +33,17 @@
     background-color: var(--bg-color2);
     border-radius: 5px;
   }
-  
+
+  @media (min-width: 768px){
+    .menu{
+      width: 100%;
+      background-color: rgb(0, 255, 208);
+    }
+  }
+
+  @media (min-width: 640px){
+    .menu{
+      width: 100%;
+      background-color: aqua;
+    }
+  }
