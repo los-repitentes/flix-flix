@@ -1,7 +1,8 @@
-import React,{useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const Menu = ({ isMenuOpen }) => {
+  const [isLogoutMenuOpen, setLogoutMenuOpen] = useState(false);
   const navigate = useNavigate();
     const scrollToSection = (event,sectionId) => {
         event.preventDefault();
@@ -19,6 +20,14 @@ const Menu = ({ isMenuOpen }) => {
 
       },[]);
 
+      const handleUserClick = () => {
+        setLogoutMenuOpen(!isLogoutMenuOpen);
+        if (isLogoutMenuOpen){
+          localStorage.removeItem("User");
+          navigate('/');
+        }
+      };
+
     return (
     <>
     <nav className={`main-nav ${isMenuOpen ? "show" : ""}`} id="main-nav">
@@ -32,6 +41,11 @@ const Menu = ({ isMenuOpen }) => {
             {user?.nombre}
             </a>
           </li>
+
+          <li className="main-menu__item">
+          <button onClick={handleUserClick}>Cerrar Sesión</button>
+        </li>
+
         </ul>
       </nav>
     </>
