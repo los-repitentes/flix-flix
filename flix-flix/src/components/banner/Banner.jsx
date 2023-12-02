@@ -1,4 +1,4 @@
-import { PlayIcon, InformationCircleIcon } from '@heroicons/react/24/solid';
+import { PlayIcon, InformationCircleIcon } from "@heroicons/react/24/solid";
 
 const Banner = () => {
   return (
@@ -21,7 +21,51 @@ const Banner = () => {
             their personal family issues, notably Star Lord s encounter with his
             father, the ambitious celestial being Ego.
           </p>
-          <div className="absolute h-72 w-full">
+          <div className="flex flex-row items-center lg:invisible md:visible mt-3 md:mt-4 gap-3">
+            <button
+              onClick={() => {}}
+              className="
+            bg-white
+            text-white
+              bg-opacity-30 
+              rounded-md 
+              py-1 md:py-2 
+              px-2 md:px-4
+              w-auto 
+              text-xs lg:text-lg 
+              font-semibold
+              flex
+              flex-row
+              items-center
+              hover:bg-opacity-20
+              transition
+            "
+            >
+              <InformationCircleIcon className="w-4 md:w-7 mr-1" />
+              Más info
+            </button>
+            <button
+              onClick={() => {}}
+              className="
+              bg-white 
+                rounded-md 
+                py-1 md:py-2 
+                px-2 md:px-4
+                w-auto 
+                text-xs lg:text-lg 
+                font-semibold
+                flex
+                flex-row
+                items-center
+                hover:bg-neutral-300
+                transition
+                "
+            >
+              <PlayIcon className="w-4 md:w-7 text-black mr-1" />
+              Play
+            </button>
+          </div>
+          <div className="absolute h-[16.5vw] w-full lg:visible md:invisible">
             <section className="flex flex-row h-full">
               <div className="h-full">
                 <img
