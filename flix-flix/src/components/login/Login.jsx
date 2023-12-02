@@ -117,13 +117,13 @@ const Login = () => {
                   />
                 </div>
                 <button type="submit" className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition'>
-                  Crear cuenta
+                  Iniciar 
                 </button>
                 <div className="text-neutral-500 text-sm mt-2 flex justify-between">
-                  <div className="">
+                  {/* <div className="">
                     <input type="checkbox" name="" id="recuerdame"/>
                     <label htmlFor='recuerdame' className='ms-1'>Recuérdame</label>
-                  </div>
+                  </div> */}
                   <span className='hover:underline hover:cursor-pointer'>¿Necesitas ayuda?</span>
                 </div>
                 <p className='text-neutral-500 mt-12'>
@@ -132,12 +132,7 @@ const Login = () => {
                     {variant == 'login' ? 'Suscríbete ahora.' : 'Inicia sesión'}
                   </span>
                 </p>
-                <p className='text-neutral-500 mt-2 text-sm'>
-                  Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.
-                  <span className='text-blue-600 hover:cursor-pointer hover:underline ms-1'>
-                    Más info.
-                  </span>
-                </p>
+               
               </div>
             </div>
             </form>
