@@ -1,11 +1,24 @@
 /* src/styles/css/generos.css */
 
 body {
-    margin: 0; /* Elimina el margen por defecto del cuerpo de la página */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff; /* Fondo blanco para el cuerpo */
+  }
+  
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .side-space {
+    flex: 1;
+    background-color: #fff; /* Color blanco para el espacio a los lados */
   }
   
   .genero {
-    min-height: 100vh; /* Establece la altura mínima al 100% de la altura de la ventana (viewport height) */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +28,10 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: white;
     padding: 20px;
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto */
+    box-sizing: border-box;
+    width: 60%; /* Porcentaje del ancho total */
+    height: 80vh; /* Ajuste la altura según sus necesidades */
+    margin: auto; /* Centra horizontalmente */
   }
   
   h1,

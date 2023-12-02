@@ -126,7 +126,18 @@ const Login = () => {
                   </div>
                   <span className='hover:underline hover:cursor-pointer'>¿Necesitas ayuda?</span>
                 </div>
-               
+                <p className='text-neutral-500 mt-12'>
+                  { variant == 'login' ? '¿Primera vez en Flix Flix?' : '¿Ya tienes una cuenta?'}
+                  <span onClick={toggleVariant} className='text-white ml-1 hover:underline cursor-pointer'>
+                    {variant == 'login' ? 'Suscríbete ahora.' : 'Inicia sesión'}
+                  </span>
+                </p>
+                <p className='text-neutral-500 mt-2 text-sm'>
+                  Disclaimer: imagenes utilizadas son propiedad de star+
+                  <span className='text-blue-600 hover:cursor-pointer hover:underline ms-1'>
+                    Más info.
+                  </span>
+                </p>
               </div>
             </div>
             </form>
