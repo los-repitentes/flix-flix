@@ -1,11 +1,12 @@
 import PropTypes from "prop-types"
 
 
-const Input = ({ id, onChange, value, label, type }) => {
+const Input = ({ id, onChange, value, label, type,name }) => {
   return (
     <div className="relative">
       <input
         id={id}
+        name={name}
         type={type}
         onChange={onChange}
         value={value}
@@ -27,6 +28,7 @@ Input.propTypes = {
     value: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     type: PropTypes.string,
+    name: PropTypes.string,
   };
 
 export default Input;

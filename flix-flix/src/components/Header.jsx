@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {  useState } from 'react';
 import Menu from './menu';
 import LogoBusqueda from '../assets/busqueda.svg';
 import Logo from '../assets/logo.svg';
@@ -8,6 +8,8 @@ const Header = () => {
     const handleMenuToggle = () => {
       setMenuOpen(!isMenuOpen);
     };
+
+    
   
     return (
       <>

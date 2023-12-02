@@ -1,21 +1,80 @@
 import Input from "../Input/Input"
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Logo from "../../assets/logo.svg"
 import "./Login.css"
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
+
     const [variant, setVariant] = useState('login');
     const toggleVariant = useCallback(() => {
         setVariant((currentVariant) => currentVariant == 'login' ? 'registro' : 'login');
     }, [])
+    const inicial = {
+      email: "",
+      usr: "",
+      password: "",
+    };
+  
+    const [datos, setDatos] = useState(inicial);
+    const cambio = (e) => {
+      const { name, value } = e.target;
+      setDatos({ ...datos, [name]: value });
+      
+    };
+    useEffect(()=>{
+      document.title = `Login`;
 
-    const login = async () => {
-      };
+    },[])
+    const env = async (e) => {
+      e.preventDefault();
+      // let log = document.getElementById("login");
+      // log.innerHTML =
+      //   '<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>';
+      if (datos !== "") {
+        const res = await fetch(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/auth.php`, {
+          method: "POST",
+          body: JSON.stringify(datos),
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await res.json();
+        console.log(data)
+  
+        // log.innerText = "Re intentar";
+  
+        // if (data.codigo_usuario) {
+        //   const info = {
+        //     email: data.email,
+        //     id: data.codigo_usuario,
+        //     cedula: data.cc,
+        //     nombre: data.nombre,
+        //     apellido: data.apellido,
+        //     role: data.rol,
+        //     telefono: data.telefono,
+        //     municipio: data.municipio,
+        //     direccion: data.direccion,
+        //     pais: data.pais,
+        //   };
+  
+        //   if (data.rol === "1") {
+        //     sessionStorage.setItem("User", JSON.stringify(info));
+        //     sessionStorage.setItem("IsAdmin", true);
+        //     setIsadmin(true);
+        //     history(`/home`);
+        //   } else {
+        //     localStorage.setItem("User", JSON.stringify(info));
+        //     history("/");
+        //   }
+        // } else {
+        //   let alerta = document.querySelector(".alert-danger");
+        //   alerta.classList.remove("d-none");
+        //   alerta.innerHTML = `${data.result.error_msg}`;
+        // }
+      }
+    };
+
     
-    const register = async () => {
-      };
 
       return (
         <div className="relative h-full w-full fondo">
@@ -23,6 +82,7 @@ const Login = () => {
             <nav className='px-12 py-5'>
               <img src={Logo} alt="logo" className='h-12'/>
             </nav>
+            <form onSubmit={env}>
             <div className="flex justify-center">
               <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
                 <h2 className='text-white text-4xl mb-8 font-semibold'>
@@ -32,29 +92,32 @@ const Login = () => {
                   {variant == 'registro' && (
                     <Input 
                       label='Username'
-                      onChange={(ev) => setName(ev.target.value)}
+                      onChange={cambio}
                       id='name'
                       type='text'
-                      value={name}
+                      name='usr'
+                      // value={name}
                     />
                   )}
                   <Input 
-                    label='Email o número de teléfono'
-                    onChange={(ev) => setEmail(ev.target.value)}
+                    label='Email '
+                    onChange={cambio}
                     id='email'
+                    name ='email'
                     type='email'
-                    value={email}
+                    // value={email}
                   />
                   <Input 
                     label='Contraseña'
-                    onChange={(ev) => setPassword(ev.target.value)}
+                    onChange={cambio}
                     id='password'
+                    name='password'
                     type='password'
-                    value={password}
+                    // value={password}
                   />
                 </div>
-                <button onClick={variant === 'login' ? login : register} className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition'>
-                  {variant == 'login' ? 'Iniciar sesión' : 'Crear cuenta'}
+                <button type="submit" className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition'>
+                  Crear cuenta
                 </button>
                 <div className="text-neutral-500 text-sm mt-2 flex justify-between">
                   <div className="">
@@ -77,6 +140,7 @@ const Login = () => {
                 </p>
               </div>
             </div>
+            </form>
           </div>
         </div>
       );
