@@ -11,7 +11,7 @@ const Footer = () => {
 
             {/* Logo Section */}
             <div className="col-12">
-              <a href="home">
+              <a href="home" className='logoF'>
                 <img src="src\assets\logo.svg" alt="" width="207" height="51"/>
               </a>
             </div>

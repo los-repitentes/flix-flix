@@ -2,6 +2,52 @@
 /*
 * Footers
 */
+
+.section{
+	display: flex;
+	justify-content: center;
+}
+
+.logoF{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+.container {
+    width: 100vw;
+	justify-content: space-around;
+}
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+		justify-content: space-around;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+		justify-content: space-around;
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+		justify-content: space-around;
+    }
+}
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+		justify-content: space-around;
+    }
+}
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+		justify-content: space-around;
+    }
+}
 .footer-classic {
 	padding: 90px 0;
 	font-weight: 400;
