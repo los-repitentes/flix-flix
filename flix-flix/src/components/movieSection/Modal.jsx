@@ -91,9 +91,8 @@ const Modal = (
           </button>
         </div>
         <div className="modal-body">
-          {/* AQUI VA EL VIDEO */}
-          {/* <YouTube videoId={trailerUrl} opts={opts} /> */}
-          {/* <img src={imagen} alt={titulo} className="modal-image" /> */}
+        <video src="../../assets/nowuseeme.mp4" autoPlay poster={imagen}
+        className='h-[22vw] w-full object-cover'></video>
           <div className="movie-details">
             <p>
               <strong>Año:</strong> {año}
