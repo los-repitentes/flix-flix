@@ -47,10 +47,10 @@ const ModalSearch = ({results}) => {
               <strong>Generos:</strong> {results.Genre}
             </p>
             <p>
-              <strong>Lanzamiento:</strong> {lanzamiento}
+              <strong>Lanzamiento:</strong> {results.Released}
             </p>
             <p>
-              <strong>Idioma:</strong> {idioma}
+              <strong>Idioma:</strong> {results.Lenguage}
             </p>
           </div>
         </div>

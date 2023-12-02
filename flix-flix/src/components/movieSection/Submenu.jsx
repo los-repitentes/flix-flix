@@ -1,5 +1,7 @@
 import {useState} from 'react'
 import Movies from './Movies';
+import './submenu.css';
+
 const Submenu = () => {
 
     const [selectedItem, setSelectedItem] = useState('General');
@@ -9,8 +11,8 @@ const Submenu = () => {
 
   return (
     <>
-    
     <div className="menu">
+      <div className='menu2'>
       <ul className="list">
         <li className="menu-item" onClick={() => handleItemClick('General')}>Todas las peliculas</li>
         <li className="menu-item" onClick={() => handleItemClick('ComponenteB')}>Componente B</li>
@@ -18,7 +20,7 @@ const Submenu = () => {
         <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Favoritos</li>
         <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Estrenos</li>
       </ul>
-
+</div>
       {selectedItem === 'General' && <Movies />}
       {selectedItem === 'ComponenteB' && <ComponenteB />}
       {selectedItem === 'ComponenteC' && <ComponenteC />}
@@ -26,6 +28,7 @@ const Submenu = () => {
       {selectedItem === 'Estrenos' && <Estrenos />}
 
     </div>
+  
     </>
   )
 }

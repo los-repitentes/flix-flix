@@ -1,78 +1,91 @@
-/* src/styles/css/generos.css */
-
+/* Reset de márgenes y configuración básica del cuerpo */
 body {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #fff; /* Fondo blanco para el cuerpo */
-  }
-  
-  .container {
-    display: flex;
-    width: 100%;
-  }
-  
-  .side-space {
-    flex: 1;
-    background-color: #fff; /* Color blanco para el espacio a los lados */
-  }
-  
-  .genero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    width: 60%; /* Porcentaje del ancho total */
-    height: 80vh; /* Ajuste la altura según sus necesidades */
-    margin: auto; /* Centra horizontalmente */
-  }
-  
-  h1,
-  h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    width: 100%;
-    align-items: center;
-  }
-  
-  label {
-    flex: 0 1 auto;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  
-  input[type="checkbox"]:checked + label {
-    background-color: #4CAF50;
-    opacity: 0.8;
-    border-radius: 5px;
-    padding: 5px;
-    color: white;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-    text-align: center;
-  }
-  
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("src/assets/images/short.gif");
+}
+
+/* Contenedor principal con flexbox */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* Espacio lateral con flexibilidad */
+.side-space {
+  flex: 1;
+  background-color: #fff; /* Color blanco para el espacio a los lados */
+}
+
+/* Estilo para el contenedor de géneros */
+.genero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 70%; /* Porcentaje del ancho total */
+  height: 100vh; /* Ajuste la altura según sus necesidades */
+  margin: auto; /* Centra horizontalmente */
+}
+
+/* Estilos para títulos */
+h1,
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario con cuadrícula */
+/* Estilos para el formulario con cuadrícula */
+form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: center; /* Centra horizontalmente */
+  text-align: center;
+}
+
+/* Estilos para etiquetas en el formulario */
+label {
+  flex: 0 1 auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Ajusta el espacio entre las etiquetas si es necesario */
+label:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Elimina los estilos de los checkboxes */
+input[type="checkbox"] {
+  display: none; /* Oculta los checkboxes */
+}
+
+/* Elimina los estilos de las etiquetas vinculadas a los checkboxes */
+input[type="checkbox"] + label {
+  background-color: initial;
+  opacity: 1;
+  border-radius: 0;
+  padding: 0;
+  color: initial;
+}
+
+/* Elimina el efecto de cambio de estilo al seleccionar los checkboxes */
+input[type="checkbox"]:checked + label {
+  background-color: initial;
+  opacity: 1;
+  border-radius: 0;
+  padding: 0;
+  color: initial;
+}
