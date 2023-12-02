@@ -13,7 +13,7 @@ const Submenu = () => {
       <ul className="list">
         <li className="menu-item" onClick={() => handleItemClick('General')}>Todas las peliculas</li>
         <li className="menu-item" onClick={() => handleItemClick('ComponenteB')}>Componente B</li>
-        <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Componente C</li>
+        <li className="menu-item" onClick={() => handleItemClick('ComponenteC')}>Recomendadas</li>
       </ul>
 
       {selectedItem === 'General' && <Movies />}
