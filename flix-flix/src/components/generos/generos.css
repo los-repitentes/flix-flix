@@ -1,0 +1,60 @@
+/* src/styles/css/generos.css */
+
+.genero {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea los elementos al centro horizontalmente */
+    justify-content: center; /* Alinea los elementos al centro verticalmente */
+    gap: 10px;
+  }
+  
+  h1,
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    align-items: center; /* Alinea los elementos al centro horizontalmente en el formulario */
+  }
+  
+  label {
+    flex: 0 1 auto;
+    margin-bottom: 10px;
+    text-align: center; /* Centra el texto dentro de cada etiqueta */
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  input[type="checkbox"]:checked + label {
+    background-color: #4CAF50;
+    opacity: 0.8;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 5px;
+    color: white;
+    text-align: center; /* Centra el texto dentro de cada elemento de la lista */
+  }
+  

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import './generos.css';
+import './generos.css';
 
 function Generos() {
   const [selectedGenres, setSelectedGenres] = useState([]);
