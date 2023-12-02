@@ -24,6 +24,7 @@ const Menu = ({ isMenuOpen }) => {
         setLogoutMenuOpen(!isLogoutMenuOpen);
         if (isLogoutMenuOpen){
           localStorage.removeItem("User");
+          localStorage.removeItem("selectedGenres");
           navigate('/');
         }
       };

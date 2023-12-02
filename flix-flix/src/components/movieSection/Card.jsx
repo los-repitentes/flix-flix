@@ -31,7 +31,7 @@ const Card = ({
         <img src={imagen} alt="Imagen o Cover de la pelicula" />
         <div className="card-body">
           <h4>{titulo}</h4>
-          <p>Generos{generos}</p>
+          <p>Generos: {generos}</p>
           <span>Año: {año}</span>
          <div className="btn-organization">
          <div className="button-container">
